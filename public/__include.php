@@ -58,7 +58,7 @@ function is_login() {
 function user_verify($user, $pass) {
 	$config = get_config();
 	$user_verify = $user === $config['user']['username'];
-	$pass_verify = $pass === $config['user']['password'];
+	$pass_verify = password_verify($pass, $config['user']['password']);
 
 	return $user_verify && $pass_verify;
 }
