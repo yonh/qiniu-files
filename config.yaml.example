@@ -3,3 +3,4 @@ qiniu:
   secretKey: 'your secret key'
   bucket: 'bucket name'
   domain: 'your domain'
+
