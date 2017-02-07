@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  app:
+    build: docker-image
+    ports:
+        - "7777:80"
+    image: yonh/qiniu-files
+    restart: always
+    volumes:
+      - .:/app
+    environment:
+      - WEBAPP_ROOT=public

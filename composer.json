@@ -1,0 +1,19 @@
+{
+    "name": "yonh/qiniu-files",
+    "description": "七牛文件查看 Edit",
+    "authors": [
+        {
+            "name": "yonh",
+            "email": "azssjli@163.com"
+        }
+    ],
+    "require": {
+        "qiniu/php-sdk": "^7.1",
+        "symfony/yaml": "^3.2"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+qiniu:
+  accessKey: 'your access key'
+  secretKey: 'your secret key'
+  bucket: 'bucket name'
+  domain: 'your domain'
