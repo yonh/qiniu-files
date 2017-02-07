@@ -1,11 +1,19 @@
 <?php
-require_once __DIR__ . "/../vendor/autoload.php";
+include_once __DIR__ . '/__include.php';
 
 use Qiniu\Auth;
 use Qiniu\Storage\BucketManager;
-use Symfony\Component\Yaml\Yaml;
 
-$config = Yaml::parse(file_get_contents(__DIR__ . "/../config.yaml"));
+if (!is_login()) {
+	go_login();
+}
+
+if (isset($_GET['logout']) && $_GET['logout'] == 1) {
+	user_logout();
+	go_login();
+}
+
+$config = get_config();
 
 $accessKey = $config['qiniu']['accessKey'];
 $secretKey = $config['qiniu']['secretKey'];
@@ -33,6 +41,9 @@ list($iterms, $marker, $err) = $bucketMgr->listFiles($bucket, $prefix, $marker, 
 
 echo "<meta charset='utf-8'/>";
 echo '<link rel="stylesheet" href="/static/css/public.css">';
+
+
+echo "<a href='/index.php?logout=1'>Logout</a>";
 
 if ($err !== null) {
 	echo "<h1>Error</h1>";
