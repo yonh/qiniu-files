@@ -34,7 +34,7 @@ if (isset($_POST['token']) && isset($_POST['user']) && isset($_POST['pass'])) {
 	</tr
 	<tr>
 		<td>pass:</td>
-		<td><input name="pass" /></td>
+		<td><input name="pass" type="password" /></td>
 	</tr>
 	<tr><td></td><td><input type="submit" value="login"/></td></tr>
 </table>
