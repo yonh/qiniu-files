@@ -3,4 +3,6 @@ qiniu:
   secretKey: 'your secret key'
   bucket: 'bucket name'
   domain: 'your domain'
-
+user:
+  username: your_user
+  password: password_hash string
