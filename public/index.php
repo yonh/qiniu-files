@@ -13,6 +13,8 @@ if (isset($_GET['logout']) && $_GET['logout'] == 1) {
 	go_login();
 }
 
+$token = access_token_generate();
+
 $config = get_config();
 
 $accessKey = $config['qiniu']['accessKey'];
@@ -42,8 +44,23 @@ list($iterms, $marker, $err) = $bucketMgr->listFiles($bucket, $prefix, $marker, 
 echo "<meta charset='utf-8'/>";
 echo '<link rel="stylesheet" href="/static/css/public.css">';
 
-
+// log out button
 echo "<a href='/index.php?logout=1'>Logout</a>";
+
+// fetch form
+
+echo "<form action='/fetch.php' method='post'>
+fetch:
+<input name='token' type='hidden' value='$token' />
+url:
+<input name='fetch_url' style='width:500px;'/>
+key:
+<input name='key' />
+<input value='fetch' type='submit'/>
+</form>";
+
+
+
 
 if ($err !== null) {
 	echo "<h1>Error</h1>";

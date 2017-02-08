@@ -9,7 +9,7 @@ qiniu:
   domain: 'your domain'
 user:
   username: your_user
-  password: password_hash string
+  password: password_hash
 ```
 * 密码使用password_hash('password', PASSWORD_DEFAULT);生成
 
