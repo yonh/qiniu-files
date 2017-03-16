@@ -12,6 +12,7 @@ user:
   password: password_hash
 ```
 * 密码使用password_hash('password', PASSWORD_DEFAULT);生成
+* 也可以执行`pass.php`生成
 
 
 
